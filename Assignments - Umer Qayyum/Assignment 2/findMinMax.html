@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script>
+      function findMinMax() {
+        let input = document.getElementById("numbers").value;
+        let arr = input.split(',').map(Number);
+        arr.sort((a, b) => a - b);
+        let min = arr[0];
+        let max = arr[arr.length - 1];
+        document.getElementById("result").innerHTML = "Minimum: " + min + " Maximum: " + max;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Find Min and Max</h1>
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+    <button onclick="findMinMax()">Submit</button>
+    <p id="result"></p>
+  </body>
+</html>
