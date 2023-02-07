@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Odd Number Sum</title>
+  </head>
+  <body>
+    <div>
+      <label for="inputNumber">Enter a number:</label>
+      <input type="text" id="inputNumber" />
+    </div>
+    <button id="calculateBtn">Calculate</button>
+    <div id="output"></div>
+    <script>
+      const input = document.getElementById("inputNumber");
+      const btn = document.getElementById("calculateBtn");
+      const output = document.getElementById("output");
+
+      btn.addEventListener("click", function() {
+        let num = input.value;
+        if (num.length <= 5) {
+          output.innerHTML = "Please enter a number with more than 5 digits.";
+          return;
+        }
+  
+        let sum = 0;
+        for (let i = 0; i < num.length; i++) {
+          let digit = parseInt(num[i]);
+          if (digit % 2 !== 0) {
+            sum += digit;
+          }
+        }
+  
+        output.innerHTML = "Sum of all odd numbers: " + sum;
+      });
+    </script>
+  </body>
+</html>
